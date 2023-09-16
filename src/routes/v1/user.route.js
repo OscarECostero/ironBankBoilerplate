@@ -6,6 +6,10 @@ const userController = require('../../controllers/user.controller');
 
 const router = express.Router();
 
+router.get('/show', (req, res) => {
+  res.send('This is a route to show you how much I love you');
+});
+
 router
   .route('/')
   .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
